@@ -1,0 +1,84 @@
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.stack {
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  animation: fadeUp 0.5s ease both;
+}
+
+.card {
+  width: 100%;
+  background: var(--surface);
+  border: 0.5px solid var(--border-light);
+  border-radius: 24px;
+  padding: 3.75rem 3.75rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.logoRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logoDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--green);
+}
+
+.logoText {
+  font-family: 'DM Mono', monospace;
+  font-size: 16px;
+  letter-spacing: 0.12em;
+  color: var(--subtle);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.title {
+  font-family: 'DM Mono', monospace;
+  font-size: 3.15rem;
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.15;
+}
+
+.accentGreen {
+  color: var(--green);
+  font-style: normal;
+}
+
+.accentDark {
+  color: var(--green-dark);
+  font-style: normal;
+}
+
+.tagline {
+  font-family: 'DM Mono', monospace;
+  font-size: 1.3rem;
+  color: var(--muted);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
