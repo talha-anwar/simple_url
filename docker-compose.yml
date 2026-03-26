@@ -7,6 +7,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     volumes:
       - db_data:/var/lib/mysql
     ports:
@@ -18,18 +20,25 @@ services:
     depends_on:
       - db
     environment:
-      DB_USER: root
-      DB_PASSWORD: easypass@shorter_url
-      DB_HOST: db
-      DB_NAME: url_db
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_HOST: ${DB_HOST}
+      DB_NAME: ${DB_NAME}
+    volumes:
+      - ./backend:/app
     ports:
       - "8000:8000"
+    command: sh -c "pip install -r requirements.txt && uvicorn main:app --host 0.0.0.0 --port 8000 --reload"
 
   frontend:
     build: ./frontend
     restart: always
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
     ports:
-      - "8080:80"
+      - "8080:3000"
+    command: npm start
 
 volumes:
   db_data:
