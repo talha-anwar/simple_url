@@ -1,0 +1,22 @@
+.navbar {
+    background: #5a7a2e;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #f5f5dc;
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding: 0.8rem 1.2rem;
+    letter-spacing: 0.5px;
+}
+
+.actions {
+    padding: 0.8rem 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}

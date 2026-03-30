@@ -1,0 +1,47 @@
+.pill {
+  display: flex;
+  align-items: center;
+  background: #ede8df;
+  border: 0.5px solid var(--border);
+  border-radius: 999px;
+  padding: 6px;
+  gap: 3px;
+}
+
+.side {
+  display: flex;
+  align-items: center;
+  padding: 7px 21px;
+  border-radius: 999px;
+  font-family: 'DM Mono', monospace;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  user-select: none;
+}
+
+.side:hover:not(.activeGreen):not(.activeDark) {
+  color: var(--text);
+}
+
+.activeGreen {
+  background: var(--green);
+  color: #fff;
+  font-weight: 500;
+}
+
+.activeDark {
+  background: var(--green-dark);
+  color: #fff;
+  font-weight: 500;
+}
+
+.divider {
+  width: 0.5px;
+  height: 24px;
+  background: var(--border);
+}

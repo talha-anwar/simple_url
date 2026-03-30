@@ -18,16 +18,33 @@
   --muted: #9a9488;
   --subtle: #7a7568;
   --error: #c0392b;
+  margin: 0;
+  padding: 0;
+}
+
+:root.dark {
+  --bg: #f5f0e8;
+  --surface: #faf7f2;
+  --border: #c8c2b4;
+  --border-light: #d4cfc4;
+  --green: #5a7a2e;
+  --green-dark: #3a5a1e;
+  --green-light-bg: #eef4e4;
+  --text: #1a1a16;
+  --muted: #9a9488;
+  --subtle: #7a7568;
+  --error: #c0392b;
 }
 
 body {
   background-color: var(--bg);
   color: var(--text);
   font-family: 'DM Sans', sans-serif;
+  max-width: 100%;
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  margin: 0;
+  padding: 0;
 }
 
 ::selection {
