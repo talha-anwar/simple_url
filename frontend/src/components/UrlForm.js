@@ -71,7 +71,7 @@ export default function UrlForm({ mode, onResult }) {
         </button>
       </div>
 
-      <div className={styles.expiryRow} style={{ visibility: isPersist ? "visible" : "hidden" }}>
+      <div className={styles.expiryRow} style={{ visibility: isPersist ? "visible" : "hidden", opacity: isPersist ? 1 : 0 }}>
         {EXPIRY_OPTIONS.map((opt) => (
           <button
             key={opt.value}

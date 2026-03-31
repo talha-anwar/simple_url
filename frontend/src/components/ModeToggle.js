@@ -10,7 +10,7 @@ export default function ModeToggle({ mode, onSwitch }) {
       >
         Simple
       </button>
-      <div className={styles.divider} />
+      <div />
       <button
         className={`${styles.side} ${mode === "persistent" ? styles.activeDark : ""}`}
         onClick={() => onSwitch("persistent")}
