@@ -15,7 +15,7 @@ function App() {
     if (isDark) {
       document.documentElement.classList.add("dark");
     }
-  }, []);
+  }, [isDark]);
 
   return (
     <>
