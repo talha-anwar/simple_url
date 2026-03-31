@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from pydantic import BaseModel
-from models.db import SessionLocal, engine
+from dependencies import get_db
 from typing import Optional
 from datetime import datetime
 from fastapi.responses import RedirectResponse
@@ -14,13 +14,6 @@ router = APIRouter()
 class ShortenRequest(BaseModel):
     original_url: str
     expiry_days: Optional[int] = None
-
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
 
 @router.post("/shorten")
 def shorten_url(request: ShortenRequest, db: Session = Depends(get_db)):
