@@ -23,7 +23,7 @@ export default function Home() {
                 <h1 className={styles.title}>
                   Simple <em className={styles.accentGreen}>URL</em>
                 </h1>
-                <p className={styles.tagline}>Disappears in 24 hours.</p>
+                <p className={styles.tagline}>Disappears after 24 hours.</p>
               </>
             ) : (
               <>
