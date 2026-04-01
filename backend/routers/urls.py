@@ -17,7 +17,7 @@ class ShortenRequest(BaseModel):
     expiry_days: Optional[int] = None
 
 @router.post("/shorten")
-def shorten_url(request: ShortenRequest, db: Session = Depends(get_db), current_user = Depends(get_current_user)):
+def shorten_url(request: ShortenRequest, db: Session = Depends(get_db)):
     print("expiry_days recieved:", request.expiry_days)
     short = generate_name(db)
     create_url(db, short, request.original_url, request.expiry_days)

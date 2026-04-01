@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
 from models.user import User
-from dependencies import pwd_context
+from utils.jwt import pwd_context
 
 def create_user(db: Session, username: str, email: str, password: str):
     hashed_password = pwd_context.hash(password)
