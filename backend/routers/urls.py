@@ -7,6 +7,7 @@ from datetime import datetime
 from fastapi.responses import RedirectResponse
 from utils.namegen import generate_name
 from crud.url_crud import create_url, get_url, delete_url
+from dependencies import get_current_user
 
 
 router = APIRouter()
@@ -16,7 +17,7 @@ class ShortenRequest(BaseModel):
     expiry_days: Optional[int] = None
 
 @router.post("/shorten")
-def shorten_url(request: ShortenRequest, db: Session = Depends(get_db)):
+def shorten_url(request: ShortenRequest, db: Session = Depends(get_db), current_user = Depends(get_current_user)):
     print("expiry_days recieved:", request.expiry_days)
     short = generate_name(db)
     create_url(db, short, request.original_url, request.expiry_days)
